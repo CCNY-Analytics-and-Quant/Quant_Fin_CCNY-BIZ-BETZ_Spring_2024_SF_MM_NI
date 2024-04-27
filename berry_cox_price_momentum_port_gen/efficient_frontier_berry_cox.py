@@ -227,7 +227,7 @@ class eff_frontier():
         pvols = [] # stores portfolio volatility
         stock_weights = [] # stores portfolio stock weights
         sharpe_ratio = [] # stores portfolio sharpe ratio
-        num_ports = 100 # the number of portfolios that we want to generate within our monte carlo similation
+        num_ports = 5000000 # the number of portfolios that we want to generate within our monte carlo similation
 
         risk_free_rate = self.functions.riskfreerate() # calculated the daily risk free rate and stores it in a variable
 
@@ -337,7 +337,7 @@ class eff_frontier():
             opt_port.loc['min_volatility_values', symbol+' Weight'] = minvol_port_wght[counter] # create a new column with the current stock symbol that is being iterated and then attach the weightings of the minimum variance portfolio to the row of the column
 
         # efficient frontier
-        target_rets = np.linspace(minvol_ret, maxsharpe_ret, 100) # creating an array of numbers between the minimum varaince portfolio returns and the max sharpe ratio portfolio return. this will serve as our target returns within the efficient frontier
+        target_rets = np.linspace(minvol_ret, maxsharpe_ret, 1000) # creating an array of numbers between the minimum varaince portfolio returns and the max sharpe ratio portfolio return. this will serve as our target returns within the efficient frontier
         target_vols = [] # stores the the volatility values for our optimal portfolio based on our target returns
         target_wghts = [] # stores the the stock weightings values for our optimal portfolio based on our target returns
         target_sharpe = [] # stores the the sharpe ratio values for our optimal portfolio based on our target returns
