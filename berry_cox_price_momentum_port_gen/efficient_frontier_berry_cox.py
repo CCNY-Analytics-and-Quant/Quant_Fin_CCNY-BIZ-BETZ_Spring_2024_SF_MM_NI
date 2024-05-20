@@ -227,7 +227,7 @@ class eff_frontier():
         pvols = [] # stores portfolio volatility
         stock_weights = [] # stores portfolio stock weights
         sharpe_ratio = [] # stores portfolio sharpe ratio
-        num_ports = 1000000 # the number of portfolios that we want to generate within our monte carlo similation
+        num_ports = 5000000 # the number of portfolios that we want to generate within our monte carlo similation
 
         risk_free_rate = self.functions.riskfreerate() # calculated the daily risk free rate and stores it in a variable
 
